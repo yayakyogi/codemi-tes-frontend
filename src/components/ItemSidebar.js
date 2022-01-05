@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 export default function ItemSidebar(props) {
   const { img, alt, title, count, showCounter } = props;
@@ -24,9 +24,9 @@ export default function ItemSidebar(props) {
 }
 
 ItemSidebar.propTypes = {
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  alt: PropTypes.string,
-  count: PropTypes.number,
-  showCounter: PropTypes.bool,
+  img: propTypes.string.isRequired,
+  title: propTypes.string.isRequired,
+  alt: propTypes.string,
+  count: propTypes.number,
+  showCounter: propTypes.bool,
 };

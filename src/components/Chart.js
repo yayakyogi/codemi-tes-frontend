@@ -9,38 +9,70 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import React, { useEffect, useState } from "react";
+import formatDate from "../Utils/formatDate";
+// Data generation
+function getRandomArray(numItems) {
+  // Create random array of objects
+  let data = [];
+  for (var i = 0; i < numItems; i++) {
+    data.push({
+      value: Math.round(20 + 80 * Math.random()),
+    });
+  }
+  return data;
+}
 
-const state = {
-  labels: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
-  datasets: [
-    {
-      label: "Last Update 05/01/2022",
-      data: [80, 90, 40, 75, 50, 70, 100],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
+// Get data number random
+function getData() {
+  let number = [];
+  number.push({
+    data: getRandomArray(20),
+  });
+
+  return number;
+}
 
 export const BarChart = () => {
+  const [dataChart, setDataChart] = useState([]);
+  const state = {
+    labels: ["", "", "", "", "", "", "", "", "", ""],
+    datasets: [
+      {
+        label: `Last Update ${formatDate(new Date())}`,
+        data: dataChart.map((data) => {
+          return data.value;
+        }),
+        backgroundColor: "#2C8CE6",
+        borderColor: "white",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  // console.log(dataChart);
+  useEffect(() => {
+    setTimeout(() => {
+      setInterval(() => {
+        const getdata = getData();
+        getdata.map((data) => {
+          return setDataChart(data.data);
+        });
+      }, 5000);
+    }, 1000);
+    const getdata = getData();
+    getdata.map((data) => {
+      return setDataChart(data.data);
+    });
+  }, []);
+
   return (
     <div
-      style={{ backgroundColor: "white", marginBottom: 20, borderRadius: 5 }}
+      style={{
+        backgroundColor: "white",
+        marginBottom: 20,
+        borderRadius: 5,
+      }}
     >
       <Bar
         data={state}
