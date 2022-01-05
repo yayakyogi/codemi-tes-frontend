@@ -3,6 +3,7 @@ import MenuHeader from "./Components/MenuHeader";
 import axios from "axios";
 import formatNumber from "./Utils/formatNumber";
 import { BarChart } from "./Components/Chart";
+import ItemPageActive from "./Components/ItemPageActive";
 
 export default function Content() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -16,7 +17,7 @@ export default function Content() {
   const loadDataCovid = async () => {
     const res = await axios.get("https://covid19.mathdro.id/api/");
     if (res.status === 200) {
-      console.log(res.data);
+      // console.log(res.data);
       setDataCovid(res.data);
       setIsLoaded(true);
     } else {
@@ -76,22 +77,56 @@ export default function Content() {
             </div>
           </div>
         </div>
-        <div style={{ width: 20 }}></div>
+        <div style={{ width: 50 }}></div>
         <div
           className="card"
           style={{
-            width: "50%",
-            backgroundColor: "#0d6efd",
+            width: 600,
+            backgroundColor: "#2C8CE6",
             color: "white",
-            paddingRight: 20,
-            paddingLeft: 20,
+            paddingRight: 25,
+            paddingLeft: 25,
+            paddingBottom: 10,
+            position: "relative",
           }}
         >
           <div className="active-user">
             <h3>Active User Right Now</h3>
             <p className="total-user">479</p>
-            <p className="title">Page view per days</p>
+            <p className="title">Page view per minutes</p>
             <BarChart />
+            <br />
+            <ItemPageActive
+              isTitle={true}
+              pageActive="Top Active Page"
+              activeUser="Active User"
+            />
+            <ItemPageActive isTitle={false} pageActive="/#/" activeUser="65" />
+            <ItemPageActive
+              isTitle={false}
+              pageActive="/#/learner/my_course"
+              activeUser="45"
+            />
+            <ItemPageActive
+              isTitle={false}
+              pageActive="/#/learner/oasdoasddasdasds"
+              activeUser="23"
+            />
+            <ItemPageActive
+              isTitle={false}
+              pageActive="/#/learner/jdjfkasjnasdafs"
+              activeUser="23"
+            />
+            <ItemPageActive
+              isTitle={false}
+              pageActive="/#/learner/kasldasdmkkkasdk"
+              activeUser="21"
+              isLast={true}
+            />
+            <div style={{ height: 60 }}></div>
+            <a href="#" style={{ position: "absolute", bottom: 20, right: 25 }}>
+              REAL TIME SUPPORT <span style={{ fontSize: 20 }}>&#8250;</span>
+            </a>
           </div>
         </div>
       </div>
