@@ -9,62 +9,20 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import React, { useEffect, useState } from "react";
-import formatDate from "../Utils/formatDate";
-// Data generation
-function getRandomArray(numItems) {
-  // Create random array of objects
-  let data = [];
-  for (var i = 0; i < numItems; i++) {
-    data.push({
-      value: Math.round(20 + 80 * Math.random()),
-    });
-  }
-  return data;
-}
-
-// Get data number random
-function getData() {
-  let number = [];
-  number.push({
-    data: getRandomArray(20),
-  });
-
-  return number;
-}
 
 export const BarChart = () => {
-  const [dataChart, setDataChart] = useState([]);
   const state = {
-    labels: ["", "", "", "", "", "", "", "", "", ""],
+    labels: ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"],
     datasets: [
       {
-        label: `Last Update ${formatDate(new Date())}`,
-        data: dataChart.map((data) => {
-          return data.value;
-        }),
+        label: "Data Pengunjung Website",
+        data: [50, 60, 80, 90, 35, 75, 90],
         backgroundColor: "#2C8CE6",
         borderColor: "white",
         borderWidth: 1,
       },
     ],
   };
-
-  // console.log(dataChart);
-  useEffect(() => {
-    setTimeout(() => {
-      setInterval(() => {
-        const getdata = getData();
-        getdata.map((data) => {
-          return setDataChart(data.data);
-        });
-      }, 5000);
-    }, 1000);
-    const getdata = getData();
-    getdata.map((data) => {
-      return setDataChart(data.data);
-    });
-  }, []);
 
   return (
     <div
