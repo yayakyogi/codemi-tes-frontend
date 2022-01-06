@@ -9,6 +9,8 @@ export default function DataContent(props) {
       <>
         {isAnyData !== true ? (
           <h1>Loading...</h1>
+        ) : data < 1 ? (
+          <h1>Data not found</h1>
         ) : (
           <div>
             <h3>10 Countries with the highest positive cases</h3>
@@ -32,8 +34,6 @@ export default function DataContent(props) {
                         <td>{data.cases28Days}</td>
                       </tr>
                     );
-                  } else {
-                    <h1>Data Kosong</h1>;
                   }
                 })}
               </tbody>
@@ -49,6 +49,8 @@ export default function DataContent(props) {
       <>
         {isAnyData !== true ? (
           <h1>Loading...</h1>
+        ) : data < 1 ? (
+          <h1>Data not found</h1>
         ) : (
           <div>
             <h3>10 Countries with the highest positive cases</h3>
@@ -72,8 +74,6 @@ export default function DataContent(props) {
                         <td>{data.deaths28Days}</td>
                       </tr>
                     );
-                  } else {
-                    <h1>Data Kosong</h1>;
                   }
                 })}
               </tbody>
@@ -87,6 +87,8 @@ export default function DataContent(props) {
       <>
         {isAnyData !== true ? (
           <h1>Loading...</h1>
+        ) : data < 1 ? (
+          <h1>Data not found</h1>
         ) : (
           <div>
             <h3>10 countries with recovering and resurgent rates</h3>
@@ -111,8 +113,6 @@ export default function DataContent(props) {
                         <td>{data.deaths28Days}</td>
                       </tr>
                     );
-                  } else if (data === null) {
-                    <h1>Data Kosong</h1>;
                   }
                 })}
               </tbody>
