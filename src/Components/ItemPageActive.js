@@ -3,7 +3,8 @@ import propTypes from "prop-types";
 export default function ItemPageActive(props) {
   const { isLast, pageActive, activeUser } = props;
   return (
-    <a href="##">
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
+    <a href="#">
       <div className="page-active-user">
         <p style={{ fontWeight: 700, fontSize: 15 }}>
           {pageActive.length > 20
