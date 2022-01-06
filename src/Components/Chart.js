@@ -106,7 +106,14 @@ export const PieChart = (props) => {
         borderRadius: 10,
       }}
     >
-      <div style={{ padding: 20, display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          padding: 20,
+          paddingBottom: 0,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <p>Confirmed : {data[0]}</p>
         <div style={{ width: 50 }}></div>
         <p>Deaths : {data[1]}</p>
