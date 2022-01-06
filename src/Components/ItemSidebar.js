@@ -10,7 +10,7 @@ export default function ItemSidebar(props) {
           style={{ width: 17, height: 15, marginRight: 10 }}
           alt={alt}
         />
-        <p style={{ fontSize: 16, color: "gray" }}>{title}</p>
+        <p style={{ fontSize: 18, color: "gray" }}>{title}</p>
       </div>
       {showCounter ? (
         <div className="count">
