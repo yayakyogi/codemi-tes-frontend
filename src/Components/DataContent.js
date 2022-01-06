@@ -14,30 +14,32 @@ export default function DataContent(props) {
         ) : (
           <div>
             <h3>10 Countries with the highest positive cases</h3>
-            <table cellSpacing="0">
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Country</th>
-                  <th>Confirmed</th>
-                  <th>Cases 28 Days</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((data, index) => {
-                  if (index >= 0 && index < 10) {
-                    return (
-                      <tr key={index}>
-                        <td style={{ textAlign: "center" }}>{index + 1}</td>
-                        <td>{data.countryRegion}</td>
-                        <td>{data.confirmed}</td>
-                        <td>{data.cases28Days}</td>
-                      </tr>
-                    );
-                  }
-                })}
-              </tbody>
-            </table>
+            <div className="container-table">
+              <table cellSpacing="0">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Country</th>
+                    <th>Confirmed</th>
+                    <th>Cases 28 Days</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((data, index) => {
+                    if (index >= 0 && index < 10) {
+                      return (
+                        <tr key={index}>
+                          <td style={{ textAlign: "center" }}>{index + 1}</td>
+                          <td>{data.countryRegion}</td>
+                          <td>{data.confirmed}</td>
+                          <td>{data.cases28Days}</td>
+                        </tr>
+                      );
+                    }
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </>
@@ -54,30 +56,32 @@ export default function DataContent(props) {
         ) : (
           <div>
             <h3>10 Countries with the highest positive cases</h3>
-            <table cellSpacing="0">
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Country</th>
-                  <th>Death</th>
-                  <th>Death 28 Days</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((data, index) => {
-                  if (index >= 0 && index < 10) {
-                    return (
-                      <tr key={index}>
-                        <td style={{ textAlign: "center" }}>{index + 1}</td>
-                        <td>{data.countryRegion}</td>
-                        <td>{data.confirmed}</td>
-                        <td>{data.deaths28Days}</td>
-                      </tr>
-                    );
-                  }
-                })}
-              </tbody>
-            </table>
+            <div className="container-table">
+              <table cellSpacing="0">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Country</th>
+                    <th>Death</th>
+                    <th>Death 28 Days</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((data, index) => {
+                    if (index >= 0 && index < 10) {
+                      return (
+                        <tr key={index}>
+                          <td style={{ textAlign: "center" }}>{index + 1}</td>
+                          <td>{data.countryRegion}</td>
+                          <td>{data.confirmed}</td>
+                          <td>{data.deaths28Days}</td>
+                        </tr>
+                      );
+                    }
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </>
@@ -92,31 +96,33 @@ export default function DataContent(props) {
         ) : (
           <div>
             <h3>10 countries with recovering and resurgent rates</h3>
-            <table cellSpacing="0">
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Country</th>
-                  <th>Death</th>
-                  <th>Death 28 Days</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((data, index) => {
-                  if (index >= 0 && index < 10) {
-                    console.log(data);
-                    return (
-                      <tr key={index}>
-                        <td style={{ textAlign: "center" }}>{index + 1}</td>
-                        <td>{data.countryRegion}</td>
-                        <td>{data.confirmed}</td>
-                        <td>{data.deaths28Days}</td>
-                      </tr>
-                    );
-                  }
-                })}
-              </tbody>
-            </table>
+            <div className="container-table">
+              <table cellSpacing="0">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Country</th>
+                    <th>Death</th>
+                    <th>Death 28 Days</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((data, index) => {
+                    if (index >= 0 && index < 10) {
+                      console.log(data);
+                      return (
+                        <tr key={index}>
+                          <td style={{ textAlign: "center" }}>{index + 1}</td>
+                          <td>{data.countryRegion}</td>
+                          <td>{data.confirmed}</td>
+                          <td>{data.deaths28Days}</td>
+                        </tr>
+                      );
+                    }
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </>
