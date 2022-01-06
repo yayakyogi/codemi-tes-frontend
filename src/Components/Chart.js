@@ -26,6 +26,18 @@ export const BarChart = () => {
     ],
   };
 
+  const options = {
+    title: {
+      display: true,
+      text: "Average Rainfall per day",
+      fontSize: 20,
+    },
+    legend: {
+      display: true,
+      position: "right",
+    },
+  };
+
   return (
     <div
       style={{
@@ -34,22 +46,7 @@ export const BarChart = () => {
         borderRadius: 5,
       }}
     >
-      <Bar
-        data={state}
-        width={100}
-        height={50}
-        options={{
-          title: {
-            display: true,
-            text: "Average Rainfall per month",
-            fontSize: 20,
-          },
-          legend: {
-            display: true,
-            position: "right",
-          },
-        }}
-      />
+      <Bar data={state} width={100} height={50} options={options} />
     </div>
   );
 };
