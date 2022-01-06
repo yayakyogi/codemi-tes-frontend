@@ -21,6 +21,62 @@
   width: 150px;
 }
 
+.navbar .menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -5px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.navbar .menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #051749;
+  transition: all 0.5s;
+}
+
+.navbar .menu-toggle span.sticky-menu-toggle {
+  background-color: white !important;
+}
+
+/* Animasi humbergur button*/
+.navbar .menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.navbar .menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+/* CSS sibiling ketika input di cek cari saudara nya di span */
+.navbar .menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.navbar .menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.navbar .menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -95,13 +151,14 @@
   justify-content: flex-start;
 }
 
-.content .wrap .card {
-  border-radius: 5px;
+.content .wrap .menu {
+  width: 100%;
   background-color: white;
+  margin-right: 20px;
+  border-radius: 10px;
 }
 
 .content .menu .menu-header {
-  /* border-radius: 5px; */
   border-bottom: 1px solid gainsboro;
 }
 
@@ -117,6 +174,15 @@
 .content .menu .item-menu .active {
   height: 3px;
   width: 100%;
+}
+
+.content .active-user {
+  background-color: #2c8ce6;
+  padding: 10px 30px 5px;
+  width: 600px;
+  border-radius: 10px;
+  color: white;
+  position: relative;
 }
 
 .content .active-user h3 {
@@ -154,6 +220,9 @@
   color: white;
 }
 
+.container-table {
+  overflow-y: scroll;
+}
 table {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -227,4 +296,33 @@ table tr:hover td {
     to(#f0f0f0)
   );
   background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
+}
+
+@media screen and (max-width: 576px) {
+  .navbar .menu-toggle {
+    display: flex;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    margin: 120px 0 0 0;
+    padding: 0 10px;
+  }
+  .content .wrap {
+    flex-direction: column;
+  }
+  .content .wrap .menu {
+    margin: 0 0 30px 0;
+  }
+  .content .menu .item-menu {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+  .content .active-user {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+  }
 }
