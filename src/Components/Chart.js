@@ -10,6 +10,7 @@ import {
 } from "chart.js";
 import { Bar, Pie } from "react-chartjs-2";
 import propTypes from "prop-types";
+import formatDate from "../Utils/formatDate";
 
 export const BarChart = () => {
   const state = {
@@ -54,7 +55,7 @@ export const BarChart = () => {
 };
 
 export const PieChart = (props) => {
-  const { labels, data } = props;
+  const { labels, data, date } = props;
   const state = {
     labels: labels,
     datasets: [
@@ -79,7 +80,7 @@ export const PieChart = (props) => {
     plugins: {
       title: {
         display: true,
-        text: "Last Update 06-01-2022",
+        text: `Last Update ${formatDate(date)}`,
         color: "#808080",
         font: {
           size: 20,
@@ -105,7 +106,6 @@ export const PieChart = (props) => {
         borderRadius: 10,
       }}
     >
-      <Pie data={state} options={options} />
       <div style={{ padding: 20, display: "flex", justifyContent: "center" }}>
         <p>Confirmed : {data[0]}</p>
         <div style={{ width: 50 }}></div>
@@ -113,6 +113,7 @@ export const PieChart = (props) => {
         <div style={{ width: 50 }}></div>
         <p>Recovered : {data[2]}</p>
       </div>
+      <Pie data={state} options={options} />
     </div>
   );
 };

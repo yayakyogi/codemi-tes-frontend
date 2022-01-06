@@ -41,7 +41,7 @@ export default function Countries() {
             <h1>Loading...</h1>
           ) : (
             // <h1>Oke</h1>
-            <PieChart labels={labels} data={data} />
+            <PieChart labels={labels} data={data} date={new Date()} />
           )}
         </div>
         <div style={{ width: 50, height: 50 }}></div>
