@@ -4,10 +4,18 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <div className="container">
-        <img
-          src="https://files-id.codemi.co.id/files/learning/image/68c3ec1a6c5d155d748cde836d0289cb"
-          alt="logo-codemi"
-        />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="menu-toggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <img
+            src="https://files-id.codemi.co.id/files/learning/image/68c3ec1a6c5d155d748cde836d0289cb"
+            alt="logo-codemi"
+          />
+        </div>
         <div>
           <a href="/aa" style={{ marginRight: 20, position: "relative" }}>
             <img

@@ -1,5 +1,4 @@
 import propTypes from "prop-types";
-
 export default function Layout(props) {
   const { children, title } = props;
   return (
