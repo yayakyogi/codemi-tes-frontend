@@ -88,7 +88,19 @@
   box-shadow: 5px 0px 5px -1px rgba(224, 224, 224, 0.32);
 }
 
-.sidebar .title {
+.sidebar-mobile {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  padding: 100px 0;
+  box-shadow: 5px 0px 5px -1px rgba(224, 224, 224, 0.32);
+}
+
+.sidebar .title,
+.sidebar-mobile .title {
   font-size: 20px;
   font-weight: 500;
   padding: 0 30px 20px;
@@ -96,18 +108,21 @@
   color: #39b54a;
 }
 
-.sidebar .sub-title {
+.sidebar .sub-title,
+.sidebar-mobile .sub-title {
   font-size: 17px;
   color: gray;
   font-weight: 500;
 }
 
-.sidebar .menu {
+.sidebar .menu,
+.sidebar-mobile .menu {
   padding: 0 30px 10px;
   border-bottom: 1px solid rgba(206, 206, 206, 0.32);
 }
 
-.sidebar .item {
+.sidebar .item,
+.sidebar-mobile .item {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -117,23 +132,27 @@
   padding: 5px 0;
 }
 
-.sidebar .item:hover {
+.sidebar .item:hover,
+.sidebar-mobile .item:hover {
   padding-left: 15px;
   box-shadow: 1px 1px 10px 2px rgba(206, 206, 206, 0.32);
 }
 
-.sidebar .sub-item1 {
+.sidebar .sub-item1,
+.sidebar-mobile .sub-item1 {
   display: flex;
   align-items: center;
   height: 40px;
 }
 
-.sidebar .sub-item1 span {
+.sidebar .sub-item1 span,
+.sidebar-mobile .sub-item1 span {
   font-weight: 500;
   color: gray;
 }
 
-.sidebar .count {
+.sidebar .count,
+.sidebar-mobile .count {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,8 +326,14 @@ table tr:hover td {
 }
 
 @media screen and (max-width: 576px) {
+  .navbar .container {
+    padding: 0 50px 0 0px;
+  }
   .navbar .menu-toggle {
     display: flex;
+  }
+  .navbar .navbar-menu-right {
+    display: none;
   }
   .sidebar {
     display: none;
