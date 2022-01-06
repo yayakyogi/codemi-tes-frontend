@@ -31,7 +31,6 @@ export default function Home() {
       <Sidebar />
       <Layout title="World Covid 19 Case">
         <ShowDataCovid isLoaded={isLoaded} dataCovid={dataCovid} />
-        {/* <div style={{ width: 50 }}></div> */}
         <ActiveUser />
       </Layout>
     </>
