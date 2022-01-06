@@ -6,7 +6,7 @@ export default function ActiveUser() {
     <div className="active-user">
       <h3>Active User Right Now</h3>
       <p className="total-user">479</p>
-      <p className="title">Page view per minutes</p>
+      <p className="title">Page view per days</p>
       <BarChart />
       <br />
       <div className="page-active-user">
@@ -14,7 +14,6 @@ export default function ActiveUser() {
         <p style={{ fontWeight: 400, fontSize: 15 }}>Active User</p>
       </div>
       <div className="line"></div>
-      <ItemPageActive isTitle={false} pageActive="/" activeUser="65" />
       <ItemPageActive
         isTitle={false}
         pageActive="/codemi/home/"
@@ -38,7 +37,7 @@ export default function ActiveUser() {
       />
       <div style={{ height: 60 }}></div>
       <a href="##" style={{ position: "absolute", bottom: 20, right: 25 }}>
-        REAL TIME SUPPORT <span style={{ fontSize: 20 }}>&#8250;</span>
+        REAL TIME SUPPORT <span style={{ fontSize: 20 }}>&#10150;</span>
       </a>
     </div>
   );
