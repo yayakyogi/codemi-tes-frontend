@@ -112,12 +112,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+.sidebar .item:hover {
+  padding-left: 15px;
+  box-shadow: 1px 1px 10px 2px rgba(206, 206, 206, 0.32);
 }
 
 .sidebar .sub-item1 {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 40px;
 }
 
 .sidebar .sub-item1 span {

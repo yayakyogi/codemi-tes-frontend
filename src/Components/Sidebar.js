@@ -10,14 +10,14 @@ export default function Sidebar() {
         <h2 className="sub-title">DATA COVID 19</h2>
         <Link to="/" style={{ textDecoration: "none" }}>
           <ItemSidebar
-            img="icons/ic_notif.png"
+            img="icons/ic_world_map.png"
             title="World"
             showCounter={false}
           />
         </Link>
         <Link to="/countries" style={{ textDecoration: "none" }}>
           <ItemSidebar
-            img="icons/ic_notif.png"
+            img="icons/ic_flag.png"
             title="Indonesia"
             showCounter={false}
           />
