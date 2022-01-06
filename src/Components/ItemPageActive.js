@@ -1,18 +1,18 @@
 import propTypes from "prop-types";
 
 export default function ItemPageActive(props) {
-  const { isTitle, isLast, pageActive, activeUser } = props;
+  const { isLast, pageActive, activeUser } = props;
   return (
     <a href="#">
       <div className="page-active-user">
-        <p style={{ fontWeight: isTitle ? 400 : 700, fontSize: 15 }}>
-          {pageActive.length > 20
-            ? pageActive + "..." + pageActive.slice(pageActive.length - 7)
+        <p style={{ fontWeight: 700, fontSize: 15 }}>
+          {pageActive.length > 5
+            ? pageActive.slice(0, 20) +
+              "..." +
+              pageActive.slice(pageActive.length - 3)
             : pageActive}
         </p>
-        <p style={{ fontWeight: isTitle ? 400 : 700, fontSize: 15 }}>
-          {activeUser}
-        </p>
+        <p style={{ fontWeight: 700, fontSize: 15 }}>{activeUser}</p>
       </div>
       {isLast ? <div></div> : <div className="line"></div>}
     </a>
@@ -20,7 +20,6 @@ export default function ItemPageActive(props) {
 }
 
 ItemPageActive.propTypes = {
-  isTitle: propTypes.bool,
   isLast: propTypes.bool,
   pageActive: propTypes.string,
   activeUser: propTypes.string,
