@@ -131,7 +131,6 @@ export default function ShowDataCovid(props) {
           />
         )}
         <p>Last updated: {dataCovid.lastUpdate}</p>
-        {/* <p>{Date(1641334885000 * 1000)}</p> */}
       </div>
     </div>
   );
