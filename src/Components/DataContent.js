@@ -2,18 +2,20 @@ import propTypes from "prop-types";
 
 export default function DataContent(props) {
   const { isAnyData, data, type } = props;
+  const messageLoading = "Sedang mengambil data...";
+  const messageDataNotFound = "Data not found";
 
   // if menu active == data confirmed
   if (type === "dataConfirmed") {
     return (
       <>
         {isAnyData !== true ? (
-          <h1>Loading...</h1>
+          <h1>{messageLoading}</h1>
         ) : data < 1 ? (
-          <h1>Data not found</h1>
+          <h1 style={{ color: "red" }}>{messageDataNotFound}</h1>
         ) : (
           <div>
-            <h3>10 Countries with the highest positive cases</h3>
+            <h3>10 Country with the highest positive cases</h3>
             <div className="container-table">
               <table cellSpacing="0">
                 <thead>
@@ -50,12 +52,12 @@ export default function DataContent(props) {
     return (
       <>
         {isAnyData !== true ? (
-          <h1>Loading...</h1>
+          <h1>{messageLoading}</h1>
         ) : data < 1 ? (
-          <h1>Data not found</h1>
+          <h1 style={{ color: "red" }}>{messageDataNotFound}</h1>
         ) : (
           <div>
-            <h3>10 Countries with the highest positive cases</h3>
+            <h3>10 Country with the highest death rate</h3>
             <div className="container-table">
               <table cellSpacing="0">
                 <thead>
@@ -86,16 +88,18 @@ export default function DataContent(props) {
         )}
       </>
     );
-  } else if (type === "dataRecovered") {
+  }
+  // if menu active == data recovered
+  else if (type === "dataRecovered") {
     return (
       <>
         {isAnyData !== true ? (
-          <h1>Loading...</h1>
+          <h1>{messageLoading}</h1>
         ) : data < 1 ? (
-          <h1>Data not found</h1>
+          <h1 style={{ color: "red" }}>{messageDataNotFound}</h1>
         ) : (
           <div>
-            <h3>10 countries with recovering and resurgent rates</h3>
+            <h3>10 Countries with the highest positive recovery rates</h3>
             <div className="container-table">
               <table cellSpacing="0">
                 <thead>
