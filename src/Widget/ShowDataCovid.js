@@ -58,82 +58,80 @@ export default function ShowDataCovid(props) {
   }, [isShowDataDeaths]);
 
   return (
-    <div className="card" style={{ width: "80%" }}>
-      <div className="menu">
-        <div className="menu-header" style={{ display: "flex" }}>
-          {isLoaded ? (
-            <>
-              <MenuHeader
-                title="Confirmed"
-                total={formatNumber(dataCovid.confirmed.value)}
-                index={0}
-                selectedItem={selectedIndex}
-                onPress={() => {
-                  handleClikMenuHeader(0);
-                  getDataConfirmed();
-                  setIsMenuDataConfirmed(true);
-                  setIsMenuDataDeaths(false);
-                  setIsMenuDataRecovered(false);
-                }}
-              />
-              <MenuHeader
-                title="Deaths"
-                total={formatNumber(dataCovid.deaths.value)}
-                index={1}
-                selectedItem={selectedIndex}
-                onPress={() => {
-                  handleClikMenuHeader(1);
-                  getDataDeaths();
-                  setIsMenuDataDeaths(true);
-                  setIsMenuDataConfirmed(false);
-                  setIsMenuDataRecovered(false);
-                }}
-              />
-              <MenuHeader
-                title="Recovered"
-                total={formatNumber(dataCovid.recovered.value)}
-                index={2}
-                selectedItem={selectedIndex}
-                onPress={() => {
-                  handleClikMenuHeader(2);
-                  getDataRecovered();
-                  setIsMenuDataRecovered(true);
-                  setIsMenuDataConfirmed(false);
-                  setIsMenuDataDeaths(false);
-                }}
-              />
-            </>
-          ) : (
-            <>
-              <span>Loading...</span>
-            </>
-          )}
-        </div>
-        <div className="content-" style={{ padding: 20 }}>
-          {isMenuDataConfirmed && (
-            <DataContent
-              type="dataConfirmed"
-              isAnyData={isShowDataConfirmed}
-              data={dataConfirmed}
+    <div className="menu">
+      <div className="menu-header">
+        {isLoaded ? (
+          <>
+            <MenuHeader
+              title="Confirmed"
+              total={formatNumber(dataCovid.confirmed.value)}
+              index={0}
+              selectedItem={selectedIndex}
+              onPress={() => {
+                handleClikMenuHeader(0);
+                getDataConfirmed();
+                setIsMenuDataConfirmed(true);
+                setIsMenuDataDeaths(false);
+                setIsMenuDataRecovered(false);
+              }}
             />
-          )}
-          {isMenuDataDeaths && (
-            <DataContent
-              type="dataDeaths"
-              isAnyData={isShowDataDeaths}
-              data={dataDeaths}
+            <MenuHeader
+              title="Deaths"
+              total={formatNumber(dataCovid.deaths.value)}
+              index={1}
+              selectedItem={selectedIndex}
+              onPress={() => {
+                handleClikMenuHeader(1);
+                getDataDeaths();
+                setIsMenuDataDeaths(true);
+                setIsMenuDataConfirmed(false);
+                setIsMenuDataRecovered(false);
+              }}
             />
-          )}
-          {isMenuDataRecovered && (
-            <DataContent
-              type="dataRecovered"
-              isAnyData={isShowDataRecovered}
-              data={dataRecovered}
+            <MenuHeader
+              title="Recovered"
+              total={formatNumber(dataCovid.recovered.value)}
+              index={2}
+              selectedItem={selectedIndex}
+              onPress={() => {
+                handleClikMenuHeader(2);
+                getDataRecovered();
+                setIsMenuDataRecovered(true);
+                setIsMenuDataConfirmed(false);
+                setIsMenuDataDeaths(false);
+              }}
             />
-          )}
-          <p>Last updated: {dataCovid.lastUpdate}</p>
-          {/* <p>{Date(1641334885000 * 1000)}</p> */}
-        </div>
+          </>
+        ) : (
+          <>
+            <span>Loading...</span>
+          </>
+        )}
+      </div>
+      <div className="container" style={{ padding: 20 }}>
+        {isMenuDataConfirmed && (
+          <DataContent
+            type="dataConfirmed"
+            isAnyData={isShowDataConfirmed}
+            data={dataConfirmed}
+          />
+        )}
+        {isMenuDataDeaths && (
+          <DataContent
+            type="dataDeaths"
+            isAnyData={isShowDataDeaths}
+            data={dataDeaths}
+          />
+        )}
+        {isMenuDataRecovered && (
+          <DataContent
+            type="dataRecovered"
+            isAnyData={isShowDataRecovered}
+            data={dataRecovered}
+          />
+        )}
+        <p>Last updated: {dataCovid.lastUpdate}</p>
+        {/* <p>{Date(1641334885000 * 1000)}</p> */}
       </div>
     </div>
   );
