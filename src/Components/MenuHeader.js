@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 export default function MenuHeader(props) {
   const {
     title,
-    total = "0",
+    total = 0,
     index = 0,
     update = "",
     selectedItem = 0,
@@ -40,8 +40,8 @@ export default function MenuHeader(props) {
 
 MenuHeader.propTypes = {
   title: propTypes.string.isRequired,
-  total: propTypes.string,
   update: propTypes.string,
+  total: propTypes.number,
   index: propTypes.number,
   selectedItem: propTypes.number,
   onPress: propTypes.func,
