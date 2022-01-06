@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import propTypes from "prop-types";
 
 export default function DataContent(props) {
