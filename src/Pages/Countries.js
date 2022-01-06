@@ -35,7 +35,7 @@ export default function Countries() {
     <>
       <Navbar />
       <Sidebar />
-      <Layout title="Cases Covid 19 on Indonesia">
+      <Layout title="Covid-19 Cases in Indonesia">
         <div style={{ width: "100%" }}>
           {isLoaded !== true ? (
             <h1>Loading...</h1>
