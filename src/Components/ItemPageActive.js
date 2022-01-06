@@ -3,10 +3,10 @@ import propTypes from "prop-types";
 export default function ItemPageActive(props) {
   const { isLast, pageActive, activeUser } = props;
   return (
-    <a href="#">
+    <a href="##">
       <div className="page-active-user">
         <p style={{ fontWeight: 700, fontSize: 15 }}>
-          {pageActive.length > 5
+          {pageActive.length > 20
             ? pageActive.slice(0, 20) +
               "..." +
               pageActive.slice(pageActive.length - 3)
