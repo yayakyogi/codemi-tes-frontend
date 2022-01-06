@@ -14,25 +14,25 @@ export default function ActiveUser() {
         <p style={{ fontWeight: 400, fontSize: 15 }}>Active User</p>
       </div>
       <div className="line"></div>
-      <ItemPageActive isTitle={false} pageActive="/#/" activeUser="65" />
+      <ItemPageActive isTitle={false} pageActive="/" activeUser="65" />
       <ItemPageActive
         isTitle={false}
-        pageActive="/#/learner/my_course"
+        pageActive="/codemi/home/"
         activeUser="45"
       />
       <ItemPageActive
         isTitle={false}
-        pageActive="/#/learner/oasdoasddasdasds"
+        pageActive="/codemi/country/"
         activeUser="23"
       />
       <ItemPageActive
         isTitle={false}
-        pageActive="/#/learner/jdjfkasjnasdafs"
+        pageActive="/codemi/country/asjjdjfkasjnasdafs"
         activeUser="23"
       />
       <ItemPageActive
         isTitle={false}
-        pageActive="/#/learner/kasldasdmkkkasdk"
+        pageActive="/codemi/kasldasdmkkkasdk"
         activeUser="21"
         isLast={true}
       />
